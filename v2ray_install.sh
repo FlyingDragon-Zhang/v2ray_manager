@@ -253,9 +253,8 @@ install_main() {
   if [ -d /usr/local/etc/v2ray/v2ray_manager ]; then
     echo "alias v2ray='/usr/local/etc/v2ray/v2ray_manager/src/v2ray_main.sh'" >>~/.bashrc
 
-    local bashrcPath=~/.bashrc
-    # shellcheck bashrcPath=~/.bashrc
-    source . $bashrcPath
+    # shellcheck source=$HOME/.bashrc
+    source "${HOME}/.bashrc"
   fi
 
   # 开始初始化设置
