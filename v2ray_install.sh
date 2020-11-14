@@ -161,6 +161,21 @@ delete_v2ray_cmd() {
   done
 }
 
+download_v2ray() {
+  # 从官方下载install_release.sh
+  curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
+  if [ -f install-release.sh ]; then
+    bash install-release.sh
+  else
+    message "set 199.232.68.133 raw.githubusercontent.com to etc/hosts"
+  fi
+}
+
+trap 'onCtrlC' INT
+function onCtrlC() {
+  echo 'Ctrl+C is captured'
+}
+
 #
 #
 #
@@ -207,9 +222,9 @@ install_main() {
   fi
 
   # 尝试移动旧配置文件
-  if [ -f /etc/v2ray ]; then
+  if [ -d /etc/v2ray ]; then
     message "尝试移动旧配置文件"
-    mv -f /etc/v2ray/ /usr/local/etc/
+    mv -d /etc/v2ray/ /usr/local/etc/
   fi
 
   # 开始安装v2ray
@@ -237,9 +252,7 @@ install_main() {
   check_install_curl
   if [ $? == 0 ]; then
     {
-      # 从官方下载install_release.sh
-      curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
-      bash install-release.sh
+      download_v2ray
     } &
   fi
   wait
