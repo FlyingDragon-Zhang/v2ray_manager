@@ -19,6 +19,7 @@ load_script() {
 load_script utils          # 工具类
 load_script color          # 颜色类
 load_script message_helper # 消息提示
+load_script enum           # 枚举声明
 
 # 获取参数
 _args=$1
@@ -38,11 +39,15 @@ v2ray_help() {
 }
 
 v2ray_init() {
-  Log "l" "开始初始化v2ray设置"
+  show_message "$MessageType_Info" "开始初始化v2ray设置 ${red_bold} 初始化过程中切勿终止 ${none} 如果需要可以重新输入v2ray init"
+  show_message "$MessageType_Info" "请选择v2ray传输类型: "
+  read -p "${green}请输入[${magenta}1 - ${#transport_type[*]}${green}]:"
 
 }
 
 v2ray_main() {
+  # 读取用户数据
+
   case $_args in
   'menu' | 'Menu' | 'MENU')
     load_script menu

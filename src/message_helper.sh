@@ -36,16 +36,16 @@ Log(){
   content=$2
   case $type in
   'i' | 'I')
-    echo -e "$(date +%Y_%m_%d)${MessageType_None}${content}"
+    echo -e "$(date +%Y_%m_%d)  ${MessageType_None}  ${content}"
     ;;
   'l' | 'L')
-    echo -e "$(date +%Y_%m_%d)${MessageType_Log}${content}"
+    echo -e "$(date +%Y_%m_%d)  ${MessageType_Log}  ${content}"
     ;;
   'w' | 'W')
-    echo -e "$(date +%Y_%m_%d)${MessageType_Warning}${content}"
+    echo -e "$(date +%Y_%m_%d)  ${MessageType_Warning}  ${content}"
     ;;
   'e' | 'E')
-    echo -e "$(date +%Y_%m_%d)${MessageType_Error}${content}"
+    echo -e "$(date +%Y_%m_%d)  ${MessageType_Error}  ${content}"
   ;;
   esac
 }
