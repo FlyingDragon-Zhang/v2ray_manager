@@ -238,7 +238,7 @@ install_main() {
   if [ $? == 0 ]; then
     {
       # 从官方下载install_release.sh
-      curl -O https://raw.githubusercontent.co
+      curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
       bash install-release.sh
     } &
   fi
