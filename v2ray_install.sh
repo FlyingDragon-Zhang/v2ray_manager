@@ -171,21 +171,21 @@ download_v2ray() {
   fi
 }
 
-trap 'onCtrlC' INT
-function onCtrlC() {
-  local curl_pid=$(pgrep -f curl)
-  if [[ -n $curl_pid ]]; then
-    kill -9 $curl_pid
-  fi
-  local install_release_pid=$(pgrep -f install-release)
-  if [[ -n $install_release_pid ]]; then
-    kill -9 $install_release_pid
-  fi
-  local main_pid=$(pgrep -f v2ray_main)
-  if [[ -n $main_pid ]]; then
-    kill -9 $main_pid
-  fi
-}
+#trap 'onCtrlC' INT
+#function onCtrlC() {
+#  local curl_pid=$(pgrep -f curl)
+#  if [[ -n $curl_pid ]]; then
+#    kill -9 $curl_pid
+#  fi
+#  local install_release_pid=$(pgrep -f install-release)
+#  if [[ -n $install_release_pid ]]; then
+#    kill -9 $install_release_pid
+#  fi
+#  local main_pid=$(pgrep -f v2ray_main)
+#  if [[ -n $main_pid ]]; then
+#    kill -9 $main_pid
+#  fi
+#}
 
 #
 #

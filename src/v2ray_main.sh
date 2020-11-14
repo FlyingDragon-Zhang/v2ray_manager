@@ -1,5 +1,6 @@
 base_dir='/usr/local/etc/v2ray/v2ray_manager/src/' # 资源目录
 
+
 # 加载脚本
 load_script() {
   local script_name=$1
@@ -46,7 +47,8 @@ v2ray_init() {
 }
 
 v2ray_main() {
-  # 读取用户数据
+
+  load_script init_profile
 
   case $_args in
   'menu' | 'Menu' | 'MENU')
