@@ -258,3 +258,5 @@ install_main() {
   # 开始初始化设置
   v2ray init
 }
+
+install_main
