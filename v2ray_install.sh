@@ -238,7 +238,7 @@ install_main() {
   if [ $? == 0 ]; then
     {
       # 从官方下载install_release.sh
-      curl -0 https://raw.githubusercontent.co
+      curl -O https://raw.githubusercontent.com
       bash install-release.sh
     } &
   fi
