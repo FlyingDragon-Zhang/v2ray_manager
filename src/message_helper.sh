@@ -4,7 +4,6 @@ MessageType_Log='Log'
 MessageType_Warning='Warning'
 MessageType_Error='Error'
 
-load
 
 do_show_message() {
   echo -e $1$2$none
