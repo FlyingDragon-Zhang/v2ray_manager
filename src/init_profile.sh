@@ -1,7 +1,7 @@
 profile_path="${base_dir}profile.cfg"
 
 create_template_profile() {
-  sed -i "1sI want to konw" $profile_path
+  sed -i "1s/I want to konw" $profile_path
 }
 
 backup_all_cfg() {
