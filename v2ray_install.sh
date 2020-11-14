@@ -258,6 +258,3 @@ install_main() {
   # 开始初始化设置
   v2ray init
 }
-
-install_mainm/v2fly/fhs-install-v2ray/master/install-release.sh
-    {
