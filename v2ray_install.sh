@@ -157,7 +157,6 @@ delete_v2ray_cmd() {
       sed -i "${line}d" ~/.bashrc
     else
       ((line++))
-      message 1 "check next line ${line}"
     fi
   done
 }
@@ -251,14 +250,11 @@ install_main() {
   # 重写v2ray指令
   if [ -d /usr/local/etc/v2ray/v2ray_manager ]; then
     echo "alias v2ray='/usr/local/etc/v2ray/v2ray_manager/src/v2ray_main.sh'" >>~/.bashrc
-
     # shellcheck source=$HOME/.bashrc
     source "${HOME}/.bashrc"
   fi
-  {
-    # 开始初始化设置
-    v2ray init
-  } &
+
+  . /usr/local/etc/v2ray/v2ray_manager/src/v2ray_main.sh init
 }
 
 install_main
