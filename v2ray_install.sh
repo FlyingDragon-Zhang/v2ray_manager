@@ -238,6 +238,7 @@ install_main() {
 
   check_install_curl
   if [ $? == 0 ]; then
+    {
     # 从官方下载install_release.sh
     curl -O https://raw.githubusercontent.co
       bash install-release.sh
