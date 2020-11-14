@@ -173,7 +173,18 @@ download_v2ray() {
 
 trap 'onCtrlC' INT
 function onCtrlC() {
-  echo 'Ctrl+C is captured'
+  local curl_pid=$(pgrep -f curl)
+  if [[ -n $curl_pid ]]; then
+    kill -9 $curl_pid
+  fi
+  local install_release_pid=$(pgrep -f install-release)
+  if [[ -n $install_release_pid ]]; then
+    kill -9 $install_release_pid
+  fi
+  local install_pid=$(pgrep -f install)
+  if [[ -n $install_pid ]]; then
+    kill -9 $install_pid
+  fi
 }
 
 #
