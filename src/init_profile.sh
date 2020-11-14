@@ -1,7 +1,7 @@
 profile_path="${base_dir}profile.cfg"
 
 create_template_profile() {
-  echo "I want to konw" >> "${profile_path}"
+  echo "v2ray_transport=1" >> "${profile_path}"
 }
 
 backup_all_cfg() {
