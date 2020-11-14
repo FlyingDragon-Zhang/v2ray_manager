@@ -219,7 +219,6 @@ install_main() {
     error "v2ray管理器下载失败了呢"
   fi
 
-
   # 将管理器换个地方
   if [ ! -d /usr/local/etc/v2ray ]; then
     message "makedir /usr/local/etc/v2ray/"
@@ -239,8 +238,8 @@ install_main() {
   check_install_curl
   if [ $? == 0 ]; then
     {
-    # 从官方下载install_release.sh
-    curl -O https://raw.githubusercontent.co
+      # 从官方下载install_release.sh
+      curl -O https://raw.githubusercontent.co
       bash install-release.sh
     } &
   fi
@@ -256,9 +255,10 @@ install_main() {
     # shellcheck source=$HOME/.bashrc
     source "${HOME}/.bashrc"
   fi
-
-  # 开始初始化设置
-  v2ray init
+  {
+    # 开始初始化设置
+    v2ray init
+  } &
 }
 
 install_main
